@@ -48,10 +48,10 @@ You can buy/sell US Stocks, at real time pricing.
   ![Main](./ScreenShots/Profile.png)
   
 ## Portfolio Management
-You are given an initial Rs. 10,000, so it's time to start trading
+You are given an initial Rs. 1,000,000, so it's time to start trading
 
 ### Buy Shares from US Stock Market
-* Search your favourite Share
+* Search for your favourite Stock
   
   ![Main](./ScreenShots/buyShares.png)
   
@@ -59,11 +59,11 @@ You are given an initial Rs. 10,000, so it's time to start trading
 
   ![Main](./ScreenShots/buyWindow.png)
   
-* View purchased shares in Trade History
+* View purchased stocks in Trade History
 
   ![Main](./ScreenShots/TradeHistory.png)
   
- * Sell some or all shares of specified company
+ * Sell some or all stocks of specified company
  
   ![Main](./ScreenShots/SellWindow.png)
   
