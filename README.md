@@ -1,10 +1,10 @@
 # QuasarBank
 
-A MERN application for Virtual Banking and Portfolio Management.
+   A MERN application for Virtual Banking and Portfolio Management.
 
 ## Functionality
-Main Functionality is portfolio managament system, in which you can virtually invest money for practicing trading, all without risking any real money.
-You can buy/sell US Stocks, at real time pricing.
+   Main Functionality is portfolio managament system, in which you can virtually invest money for practicing trading, all without risking any real money.
+   You can buy/sell US Stocks, at real time pricing.
 
 ## How to Start
 
@@ -49,35 +49,43 @@ You can buy/sell US Stocks, at real time pricing.
   ![Main](./ScreenShots/Profile.png)
   
 ## Portfolio Management
-You are given an initial Rs. 10,000, so it's time to start trading
+   You are given an initial Rs. 10,000, so it's time to start trading
 
-### Buy Shares from US Stock Market
-* Search your favourite Share
-  
-  ![Main](./ScreenShots/buyShares.png)
-  
-* Buy specifying the required Quantity on current rates in Rs
+   ### Buy Shares from US Stock Market
+   * Search your favourite Share
 
-  ![Main](./ScreenShots/buyWindow.png)
-  
-* View purchased shares in Trade History
+     ![Main](./ScreenShots/buyShares.png)
 
-  ![Main](./ScreenShots/TradeHistory.png)
-  
- * Sell some or all shares of specified company
- 
-  ![Main](./ScreenShots/SellWindow.png)
-  
-  * Trade History after selling
-  
-    ![Main](./ScreenShots/TradeHistoryAfterSelling.png)
+   * Buy specifying the required Quantity on current rates in Rs
 
-### Admin Routes
-Admin accounts are generated only on backend, but can be used on Client side.
-* Login to Admin Route using
-   * Admin **AccountId**: `10001`
-   * Admin **Password**: `adminpass`
- * Admin privileges
-   * Admin can View all QuasarBank users
-   * Admin can deposit any amount of money to any of the QuasarBank users (Just like a local bank branch)
-   * Admin transactions are also listed
+     ![Main](./ScreenShots/buyWindow.png)
+
+   * View purchased shares in Trade History
+
+     ![Main](./ScreenShots/TradeHistory.png)
+
+   * Sell some or all shares of specified company
+
+   ![Main](./ScreenShots/SellWindow.png)
+
+   * Trade History after selling
+
+       ![Main](./ScreenShots/TradeHistoryAfterSelling.png)
+
+## Admin Routes
+   Admin accounts are generated only on backend, but can be used on Client side.
+   * Login to Admin Route using
+      * Admin **AccountId**: `10001`
+      * Admin **Password**: `adminpass`
+    * Admin privileges
+      * Admin can View all QuasarBank users
+      * Admin can deposit any amount of money to any of the QuasarBank users (Just like a local bank branch)
+      * Admin transactions are also listed
+## Security
+   * Any security vulnerability is threat to a banking website, so to overcome that, all the routes are protected using **JWT Authentication**.
+   * Passwords are not directly stored on DB, but instead encrypted using **BcryptJs**.
+   * All the tokens for accessing the routes are valid for 1 hour only.
+   
+### For any Suggestions or Changes, feel free to contact I'll be really grateful to hear you!
+
+Thank You & Stay Safe!
