@@ -85,6 +85,7 @@
    * Any security vulnerability is threat to a banking website, so to overcome that, all the routes are protected using **JWT Authentication**.
    * Passwords are not directly stored on DB, but instead encrypted using **BcryptJs**.
    * All the tokens for accessing the routes are valid for 1 hour only.
+   * Special thanks to **Finnhub.io** api which provides real time market data.
    
 ### For any Suggestions or Changes, feel free to contact I'll be really grateful to hear you!
 
