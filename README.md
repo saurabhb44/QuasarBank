@@ -64,35 +64,13 @@ You are given an initial Rs. 1,000,000, so it's time to start trading
 
   ![Main](./ScreenShots/TradeHistory.png)
   
- * Sell some or all stocks of specified company
- 
+* Sell some or all stocks of specified company
+
   ![Main](./ScreenShots/SellWindow.png)
-  
-  * Trade History after selling
-  
-    ![Main](./ScreenShots/TradeHistoryAfterSelling.png)
-   You are given an initial Rs. 1,000,000, so it's time to start trading
 
-   ### Buy Shares from US Stock Market
-   * Search your favourite Share
+* Trade History after selling
 
-     ![Main](./ScreenShots/buyShares.png)
-
-   * Buy specifying the required Quantity on current rates in Rs
-
-     ![Main](./ScreenShots/buyWindow.png)
-
-   * View purchased shares in Trade History
-
-     ![Main](./ScreenShots/TradeHistory.png)
-
-   * Sell some or all shares of specified company
-
-   ![Main](./ScreenShots/SellWindow.png)
-
-   * Trade History after selling
-
-       ![Main](./ScreenShots/TradeHistoryAfterSelling.png)
+  ![Main](./ScreenShots/TradeHistoryAfterSelling.png)
 
 ## Admin Routes
    Admin accounts are generated only on backend, but can be used on Client side.
