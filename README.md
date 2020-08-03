@@ -49,7 +49,7 @@
   ![Main](./ScreenShots/Profile.png)
   
 ## Portfolio Management
-   You are given an initial Rs. 10,000, so it's time to start trading
+   You are given an initial Rs. 1,000,000, so it's time to start trading
 
    ### Buy Shares from US Stock Market
    * Search your favourite Share
