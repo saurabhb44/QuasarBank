@@ -77,7 +77,7 @@
    * Login to Admin Route using
       * Admin **AccountId**: `10001`
       * Admin **Password**: `adminpass`
-    * Admin privileges
+   * Admin privileges
       * Admin can View all QuasarBank users
       * Admin can deposit any amount of money to any of the QuasarBank users (Just like a local bank branch)
       * Admin transactions are also listed
