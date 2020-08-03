@@ -4,7 +4,8 @@ const schema = mongoose.Schema;
 let id = {
     ID: {
         type:   String,
-        default: "1"
+        default: "1",
+        unique: true
     },
     num: {
         type: Number,

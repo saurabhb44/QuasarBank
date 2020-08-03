@@ -1,43 +1,35 @@
-const finnhub = require('finnhub');
- 
-const api_key = finnhub.ApiClient.instance.authentications['api_key'];
-api_key.apiKey = "bshg7ufrh5r9t1gmtrtg" // Replace this
-const finnhubClient = new finnhub.DefaultApi();
-const symbol = require('./symbols.json');
+const mongoose = require('mongoose');
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const Admin = require('../models/adminSchema');
+const ID = require('../models/transactionIDs');
 
-// finnhubClient.quote("AA", (error, data, response) => {
-//     console.log(data)
-// });
-var fs = require('fs');
-// fs.writeFile("test.txt", jsonData, function(err) {
-//     if (err) {
-//         console.log(err);
-//     }
-// });
-var obj = JSON.parse(fs.readFileSync('symbols.json', 'utf8'));
-// console.log(obj);
-
-obj.map((currValue) => {
-    if(currValue.symbol.includes('AAP')){
-        console.log(currValue);
-    }
+let admin = new Admin({
+    name: 'Admin Default',
+    accountID: '10001',
+    password: "$2a$10$W9pfD9ECuKvceMW1M8QcH.V18.kIxcZbWOS23fHsmnrzYc1Kctp96"
 });
 
-// finnhubClient.stockSymbols("US", (error, data, response) => {
-//     fs.writeFile("symbols.json", JSON.stringify(data), function(err) {
-//         if (err) {
-//             console.log(err);
-//         }
-//     });
-//     // console.log(typeof JSON.stringify(data));
-// });
+let id = new ID({
+    ID: '1'
+});
 
-// finnhubClient.stockSymbols("US", (error, data, response) => {
-//     if(error){
-//         console.log(error);
-//     }
-//     data.map((currValue) => {
-//         if(currValue.symbol.includes('MSFT'))
-//             console.log(currValue);
-//     });
-// });
+admin.save();
+id.save();
+
+const PORT = 4500;
+
+const app = express();
+
+app.use(cors());
+app.use(bodyParser.json());
+
+mongoose.connect('mongodb://127.0.0.1:27017/Quasar', { useUnifiedTopology: true, useNewUrlParser: true});
+const connection = mongoose.connection;
+
+connection.once('open', () => {
+    console.log('Coneection with mongodb is established');
+});
+
+app.listen(PORT, () => console.log('Server started on port'));

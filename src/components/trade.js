@@ -71,7 +71,8 @@ export default class Trade extends Component{
             quote: null,
             qty: null,
             total: 0,
-            trades: []
+            trades: [],
+            sellWindow: false
         }
         this.onChange = this.onChange.bind(this);
         this.list = this.list.bind(this);
@@ -112,6 +113,9 @@ export default class Trade extends Component{
             
         // ,1000);
         finnhubClient.quote(e, (error, data, response) => {
+            if(error){
+                return;
+            }
             var num = new Number(data.c * this.state.forex.INR).toFixed(2);
             this.setState({
                 quote: num,
@@ -174,6 +178,9 @@ export default class Trade extends Component{
         
         
         finnhubClient.quote(e, (error, data, response) => {
+            if(error){
+                return;
+            }
             var num = new Number(data.c * this.state.forex.INR).toFixed(2);
             this.setState({
                 quote: num,
@@ -200,6 +207,9 @@ export default class Trade extends Component{
     componentDidMount(){
         interval1 = setInterval(
             finnhubClient.forexRates({"base": "USD"}, (error, data, response) => {
+                if(error){
+                    return;
+                }
                 this.setState({
                     forex: data.quote
                 })
@@ -304,8 +314,8 @@ export default class Trade extends Component{
                     </table>
 
                 <div className="btn-group btn-group-lg" style={{width:"50%", marginBottom:"30px"}}>
-                    <button type="button" onClick={() => {this.setState({button: 1})}} className="btn btn-default" style={{width: "50%", border:"black 1px solid"}}>New Trade</button>
-                    <button type="button" onClick={() => {this.setState({button: 2})}} className="btn btn-default" style={{width: "50%", border:"black 1px solid"}}>Trade History</button>
+                    <button type="button" onClick={() => {this.setState({button: 1, sellWindow: false, buyWindow: false})}} className="btn btn-default" style={{width: "50%", border:"black 1px solid"}}>New Trade</button>
+                    <button type="button" onClick={() => {this.setState({button: 2, sellWindow: false, buyWindow: false})}} className="btn btn-default" style={{width: "50%", border:"black 1px solid"}}>Trade History</button>
                 </div>
                 {this.state.button == 1 ? 
                     !this.state.buyWindow ?
@@ -330,11 +340,11 @@ export default class Trade extends Component{
                             </div>
                             <div className="card-body">
                                 <form onSubmit={this.onPurchase} className='form-inline' >
-                                    <div className='form-group mr-2'>
+                                    <div className='form-group'>
                                         <label className="my-1 mr-2">Qty.</label>
                                         <input type='number' className="form-control mr-2" onChange={this.onChangeQty} value={this.state.qty} min='1' max={this.state.maxqty}/>
                                     </div>
-                                    <div className='form-group mr-5 ml-3' >
+                                    <div className='form-group mr-5' >
                                         <label className="my-1 mr-2">Amt.</label>
                                         <input className="form-control" value={new Number(this.state.total).toFixed(2)} placeholder='0' disabled/>
                                     </div>
@@ -363,7 +373,7 @@ export default class Trade extends Component{
                         <div className="card-header bg-danger text-light">
                             <span className="mr-3" style={{float: "left"}}>Buy {this.state.value} x {this.state.qty} Qty</span>
                             <span style={{float: "right"}}>Price Per Share: &#x20B9; {this.state.quote}</span>
-                            <span style={{float: "left"}}>Purchased At: &#x20B9; {this.state.buyPrice}</span>
+                            <span >Purchased At: &#x20B9; {this.state.buyPrice}</span>
                         </div>
                         <div className="card-body">
                             <form onSubmit={this.onSell} className='form-inline' >
@@ -375,7 +385,7 @@ export default class Trade extends Component{
                                     <label className="my-1 mr-2">Amt.</label>
                                     <input className="form-control" value={new Number(this.state.total).toFixed(2)} placeholder='0' disabled/>
                                 </div>
-                                <div className="ml-5">
+                                <div className="ml-5 float-right">
                                     <button className='btn btn-danger mr-2' type='submit'>Sell</button>
                                     <button className='btn btn-secondary' onClick={this.cancel}>Cancel</button>
                                 </div>

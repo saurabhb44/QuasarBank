@@ -27,7 +27,7 @@ let user = {
     },
     balance: {
         type: Number,
-        default: 0
+        default: 1000000
     },
     transactions: [{
         tdate: {
