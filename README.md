@@ -20,7 +20,7 @@
 5) Initiate Admin Account and TransactionID generator on DB by running the script *One time only*: `$ node ./backend/adminRoutes/demo.js` & then end it.
 6) Run the React app: `$ npm start`
 7) Start the backend: `$ nodemon ./backend/index.js`
-8) The react server runs at port 3000, so go to the url in the browser: `$ http://localhost:3000/`
+8) The react server runs at port 3000, so go to the url in the browser: `http://localhost:3000/`
 9) Happy Banking!
 
 ## Usage:
