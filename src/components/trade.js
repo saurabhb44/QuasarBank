@@ -101,13 +101,13 @@ export default class Trade extends Component{
     }
 
     onSelect(e, e1){
-        setTimeout(
-            this.setState({
-                value: e,
-                description: e1,
-                buyWindow: true
-            })
-        ,1000);
+        // setTimeout(
+        //     this.setState({
+        //         value: e,
+        //         description: e1,
+        //         buyWindow: true
+        //     })
+        // ,1000);
         
         // interval = setInterval(
             
@@ -118,6 +118,9 @@ export default class Trade extends Component{
             }
             var num = new Number(data.c * this.state.forex.INR).toFixed(2);
             this.setState({
+                value: e,
+                description: e1,
+                buyWindow: true,
                 quote: num,
                 maxqty: parseInt(this.state.userBal / num)
             });
@@ -184,15 +187,18 @@ export default class Trade extends Component{
             var num = new Number(data.c * this.state.forex.INR).toFixed(2);
             this.setState({
                 quote: num,
-                maxqty: qty
+                maxqty: qty,
+                sellWindow: true,
+                value: e,
+                buyPrice: buyP
             });
         });
     
-        this.setState({
-            sellWindow: true,
-            value: e,
-            buyPrice: buyP
-        });
+        // this.setState({
+        //     sellWindow: true,
+        //     value: e,
+        //     buyPrice: buyP
+        // });
         // interval = setTimeout(
         //     finnhubClient.quote(e, (error, data, response) => {
         //         var num = new Number(data.c * this.state.forex.INR).toFixed(2);
