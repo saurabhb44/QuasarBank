@@ -4,7 +4,7 @@ let router = express.Router();
 const jwt = require('jsonwebtoken');
 
 router.get('/tradeHistory', verifyToken, (req, res) => {
-    try{
+    // try{
         jwt.verify(req.token, 'secretkey', async (err, authdata) => {
             if(err){
                 res.send("Token Missing or Wrong...")
@@ -19,9 +19,9 @@ router.get('/tradeHistory', verifyToken, (req, res) => {
             }
             
         })
-    } catch (err){
-        res.send("Error: " + err);
-    }
+    // } catch (err){
+    //     res.send("Error: " + err);
+    // }
 });
 
 function verifyToken(req, res, next){
