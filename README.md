@@ -24,7 +24,7 @@
 9) Happy Banking!
 
 ## Usage:
-1) Rgister as a Client
+1) Register as a Client
 
   ![Main](./ScreenShots/Register.png)
 
@@ -36,7 +36,7 @@
 
   ![Main](./ScreenShots/Home.png)  
   
-4) Bank Statement
+4) Account Statement
 
   ![Main](./ScreenShots/BankStatement_Cropped.png)
   
