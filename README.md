@@ -17,7 +17,7 @@
     * on **Ubuntu**
       * [Download for Ubuntu](https://repo.mongodb.org/apt/ubuntu/dists/focal/mongodb-org/4.4/multiverse/binary-amd64/mongodb-org-server_4.4.0_amd64.deb)
 4) Go to the QuasarBank Folder and install required packages using npm: `$ npm install`.
-5) Initiate Admin Account and TransactionID generater on DB by running the script *One time only*: `$ node ./backend/adminRoutes/demo.js` & then end it.
+5) Initiate Admin Account and TransactionID generator on DB by running the script *One time only*: `$ node ./backend/adminRoutes/demo.js` & then end it.
 6) Run the React app: `$ npm start`
 7) Start the backend: `$ nodemon ./backend/index.js`
 8) The react server runs at port 3000, so go to the url in the browser: `$ http://localhost:3000/`
