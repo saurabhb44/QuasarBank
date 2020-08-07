@@ -11,7 +11,13 @@ router.post('/login', async (req, res) => {
         bcrypt.compare(password, user.password, (err, isMatch) => {
             if(err) throw err;
             if(isMatch){
-                jwt.sign({user}, 'secretkey', {expiresIn: '1h'} , (err, token) => {
+                jwt.sign({user: {
+                    name: user.name,
+                    balance: user.balance,
+                    email: user.email,
+                    DOB: user.DOB,
+                    mobile: user.mobile
+                }}, 'secretkey', {expiresIn: '1h'} , (err, token) => {
                     
                     res.status(200).json({
                         token

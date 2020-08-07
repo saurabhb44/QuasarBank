@@ -13,6 +13,7 @@ let sendMoney = require("./routes/sendMoney");
 let buyShares = require('./routes/buyShares');
 let tradeHistory = require('./routes/tradeHistory');
 let sellShares = require('./routes/sellShares');
+let transactions = require('./routes/transactions');
 
 const PORT = 5000;
 
@@ -39,4 +40,5 @@ app.use('/Quasar', sendMoney);
 app.use('/Quasar', buyShares);
 app.use('/Quasar', tradeHistory);
 app.use('/Quasar', sellShares);
+app.use('/Quasar', transactions);
 app.listen(PORT, () => console.log('Server started on port 5000'));

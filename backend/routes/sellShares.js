@@ -35,7 +35,13 @@ router.post('/sellShares', verifyToken, async (req, res) => {
                     user.transactions.push(userTransaction);
                     await user.save();
                     await tid.save();
-                    jwt.sign({user}, 'secretkey', {expiresIn: '1h'} , (err, token) => {
+                    jwt.sign({user:{
+                        name: user.name,
+                        balance: user.balance,
+                        email: user.email,
+                        DOB: user.DOB,
+                        mobile: user.mobile
+                    }}, 'secretkey', {expiresIn: '1h'} , (err, token) => {
                         res.status(200).json({
                             token
                         });

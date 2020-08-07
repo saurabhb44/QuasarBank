@@ -77,12 +77,12 @@ export default class Transactions extends Component{
     componentDidMount(){
         let jwt = localStorage.getItem('JWT');
         axios.defaults.headers.common["Authorization"] = "Bearer " + jwt;
-        axios.get('http://localhost:5000/Quasar/home/').then( res => {
+        axios.get('http://localhost:5000/Quasar/transactions/').then( res => {
         if(res.data === "Token Missing Or Wrong"){
 
         } else {
             this.setState({
-                transactions: res.data.authdata.user.transactions,
+                transactions: res.data.transactions,
             });
         }
         }).catch(err => {
@@ -94,7 +94,7 @@ export default class Transactions extends Component{
     }
     ts(){
         if(this.state.transactions){
-            return this.state.transactions.slice(0).reverse().map( function(currentValue, key){
+            return this.state.transactions.slice(0).reverse().slice(0, 10).map( function(currentValue, key){
                 return tr(currentValue, key);
             });
         }

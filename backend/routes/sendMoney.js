@@ -53,7 +53,13 @@ router.post('/send', verifyToken, (req, res) => {
                                 await tid.save();
                                 await sender.save();
                                 await receiver.save();
-                                jwt.sign({user: sender}, 'secretkey', {expiresIn: '1h'} , (err, token) => {
+                                jwt.sign({user: {
+                                    name: sender.name,
+                                    balance: sender.balance,
+                                    email: sender.email,
+                                    DOB: sender.DOB,
+                                    mobile: sender.mobile
+                                }}, 'secretkey', {expiresIn: '1h'} , (err, token) => {
                                     res.status(200).json({
                                         token
                                     });
